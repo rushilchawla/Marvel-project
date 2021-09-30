@@ -7,19 +7,39 @@ const privateKey = "48df6dafa89bd8c2666981b77990fe8216f6f14c";
 const hash = CryptoJS.MD5(ts + privateKey + apiKey).toString();
 console.log("HASH", hash);
 
-const arrayForCharacter = ["Iron Man"]
+
+var arrayForCharacter = ["Black Widow"]
+
+// //adding event listener to select the characters
+// var navbarEl = document.getElementsByClassName("navbar-item")
+
+// navbarEl.addEventListener("click", function(){})
 
 // const selectEl = document.getElementById("my-select");
 
 fetch(
-  `https://gateway.marvel.com:443/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${arrayForCharacter}`
+  `https://gateway.marvel.com:443/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=5`
 ).then(function(response) {
   return response.json();
 })
 .then(function (data) {
+const cList = document.getElementById('c-list');
+
   // TODO handle data
   console.log("DATA", data.data.results);
 
+  for (let i = 0; i < data.data.results.length; i ++) {
+    const character = data.data.results[i];
+    const cBtn = document.createElement('a');
+    cBtn.classList = ["navbar-item"];
+    cBtn.textContent = character.name;
+
+    cBtn.addEventListener('click', function () {
+      alert(character.description);
+    });
+
+    cList.appendChild(cBtn);
+  }
   // loop
   // create oprion
   // add option

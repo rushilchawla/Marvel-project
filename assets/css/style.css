@@ -1,0 +1,18 @@
+.dropdown-item{
+    max-height:200px;/* you can change as you need it */
+    overflow:auto;/* to get scroll */
+ }
+
+ ::-webkit-scrollbar{
+    width: 20px;
+    background-color: var(white);
+    border: 4px solid palevioletred;
+
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, var(white), rgba(9,9,121,1) 46%, rgba(0,212,255,1) 100%);
+    border-radius: 50px;
+}
+
