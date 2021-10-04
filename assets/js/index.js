@@ -1,4 +1,6 @@
 //var searchBtn = document.getElementById("search-button")
+var contentDropdownEl = document.getElementById("content-dropdown")
+
 
 const apiKey = "879eacf85a9c70745a7fb038ce0cca14";
 
@@ -10,7 +12,7 @@ const hash = CryptoJS.MD5(ts + privateKey + apiKey).toString();
 console.log("HASH", hash);
 
 
-var arrayForCharacter = ["Black Widow"]
+var arrayForCharacter = ["Iron Man"]
 
 // //adding event listener to select the characters
 // var navbarEl = document.getElementsByClassName("navbar-item")
@@ -20,7 +22,7 @@ var arrayForCharacter = ["Black Widow"]
 // const selectEl = document.getElementById("my-select");
 
 fetch(
-  `https://gateway.marvel.com:443/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=5`
+  `https://gateway.marvel.com:443/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&name=${arrayForCharacter}`
 ).then(function(response) {
   return response.json();
 })
@@ -31,22 +33,22 @@ const cList = document.getElementById('c-list');
   // TODO handle data
   console.log("DATA", data.data.results);
 
-  for (let i = 0; i < data.data.results.length; i ++) {
-    const character = data.data.results[i];
-    const cBtn = document.createElement('option');
-    cBtn.classList = ["navbar-item"];
-    cBtn.textContent = character.name;
+  //for (let i = 0; i < data.data.results.length; i ++) {
+   // const character = data.data.results[i];
+  //  const cBtn = document.createElement('option');
+ //   cBtn.classList = ["navbar-item"];
+//    cBtn.textContent = character.name;
 
     //cBtn.addEventListener('click', function () {
       //alert(character.description);
     //});
 
-    cList.appendChild(cBtn);
-  }
+  //  cList.appendChild(cBtn);
+  });
   // loop
   // create oprion
   // add option
-});
+//});
 
 document.getElementById("search-button").onclick = function () {
   localStorage
