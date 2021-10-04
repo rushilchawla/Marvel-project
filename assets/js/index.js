@@ -1,3 +1,5 @@
+//var searchBtn = document.getElementById("search-button")
+
 const apiKey = "879eacf85a9c70745a7fb038ce0cca14";
 
 const ts = + new Date();
@@ -45,3 +47,14 @@ const cList = document.getElementById('c-list');
   // create oprion
   // add option
 });
+
+document.getElementById("search-button").onclick = function () {
+  localStorage
+  location.href = "results.html";
+};
+
+//searchBtn.addEventListener("click", goToPageCb);
+
+//function goToPageCb(){
+//  window.location.href = "results.html";
+//}
