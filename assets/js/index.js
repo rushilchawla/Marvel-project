@@ -24,19 +24,20 @@ fetch(
 })
 .then(function (data) {
 const cList = document.getElementById('c-list');
+//cList.select2();
 
   // TODO handle data
   console.log("DATA", data.data.results);
 
   for (let i = 0; i < data.data.results.length; i ++) {
     const character = data.data.results[i];
-    const cBtn = document.createElement('a');
+    const cBtn = document.createElement('option');
     cBtn.classList = ["navbar-item"];
     cBtn.textContent = character.name;
 
-    cBtn.addEventListener('click', function () {
-      alert(character.description);
-    });
+    //cBtn.addEventListener('click', function () {
+      //alert(character.description);
+    //});
 
     cList.appendChild(cBtn);
   }

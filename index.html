@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bulma CSS framework -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- select2 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Marvel-Project</title>
 </head>
@@ -20,14 +22,17 @@
     <div class="dropdown-trigger">
       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
         <span>Characters</span>
-        <span class="icon is-small">
+        <span class="icon is-normal">
           <i class="fas fa-angle-down" aria-hidden="true"></i>
         </span>
       </button>
     </div>
-    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-      <div class="dropdown-content">
-        <div class="dropdown-item" id="c-list">
+    <div class="select" id="c-list" role="menu">
+
+        <!--<option class="navbar-item">Characters</option>--> 
+        <select id ="c-list">
+          <!-- list added by javascript -->
+        </select>        
         <!-- <button class="navbar-item" id="IronMan">
         Iron Man
         </button>
@@ -49,49 +54,27 @@
         <a class="navbar-item" id="Wolverine">
         Wolverine
         </a>   -->
-        </div>
-      </div>
+
     </div>
-</div>
-<div class="dropdown is-hoverable">
-    <div class="dropdown-trigger">
-        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-          <span>Content</span>
-          <span class="icon is-small">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-        <div class="dropdown-content">
-            <div class="dropdown-item"></div>       
-                <a class="navbar-item">
-                comics
-                </a>
-                <a class="navbar-item">
-                creators
-                </a>
-                <a class="navbar-item">
-                events
-                </a>
-                <a class="navbar-item">
-                series
-                </a>
-                <a class="navbar-item">
-                stories
-                </a>
-            </div>
-        </div>
-    </div>    
-</div>
 </div>
 
-    <div class="field">
-        <label class="label"></label>
-        <div class="control">
-          <input class="input" type="text" placeholder="input search">
-        </div>
-    </div>
+  <div class="select" role="menu">
+    <select>
+      <option class="navbar-item">Content</option>
+      <option class="navbar-item">Comics</option>
+      <option class="navbar-item">Creators</option>
+      <option class="navbar-item">Events</option>
+      <option class="navbar-item">Series</option>
+      <option class="navbar-item">Stories</option>
+    </select>
+  </div>    
+<div class="navbar-item">
+  <div class="buttons">
+    <a class="button is-primary">
+      <strong>search</strong>
+    </a>
+  </div>
+</div>
 
     <div>        
         <div class="columns">
@@ -121,7 +104,16 @@
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- select2 Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+      $( document ).ready(function() {
+        // loading select2 for character list within javascript
+        $( "#c-list" ).select2();
+      });  
+    </script>   
     <script src="./assets/js/index.js"></script>    
 </body>
 </html>
