@@ -20,14 +20,15 @@ console.log(characterID)
 var character;
 var comics;
 
-async function getContent() {
+async function getContent(characterName) {
   let response = await fetch (
-    `https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${characterNameEl.value}`
+    `https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${characterName}`
   )
   if (response.ok) { // if HTTP-status is 200-299
     // get the response body (the method explained below)
     let json = await response.json();
     character = json.data.results[0]
+
     let response2 = await fetch (
       `https://gateway.marvel.com/v1/public/characters/${character.id}/comics?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100`
     )
@@ -43,34 +44,15 @@ async function getContent() {
   }
 }
 
-
 var contentNameEl = document.getElementById("content-dropdown");
 
-function storeElements() {
-  console.log(characterNameEl.value)
-
-  localStorage.setItem("characterID", data.results[0].id);
-
-};
-
-//document.getElementById("character-title").appendChild(characterNameEl.value)
 
 document.getElementById("search-button").onclick = function () {
-  //storeElements()
-  localStorage
-  //location.href = "results.html";
-  console.log(characterNameEl.value)
+
+  localStorage.setItem("characterName", characterNameEl.value);  
   
   characterTitleEl.innerHTML = characterNameEl.options[characterNameEl.selectedIndex].text
 
-  // fetch(
-  //   `https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${characterNameEl.value}`
-  // ).then(function(response) {
-  //   console.log(response)
-  //   return response.json();
-  // })
-  //getComicsAPI()
-  getContent()
+  getContent(characterNameEl.value)
 
-  // console.log(`https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&name=${characterNameEl.value}`)
 }
