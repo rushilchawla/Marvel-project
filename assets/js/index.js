@@ -14,76 +14,63 @@ const privateKey = "48df6dafa89bd8c2666981b77990fe8216f6f14c";
 const hash = CryptoJS.MD5(ts + privateKey + apiKey).toString();
 console.log("HASH", hash);
 
-function getAPI() { fetch(
-  `https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${characterNameEl.value}`
-).then(function(response) {
-  return response.json();
-})
-.then(function (data) {
-const cList = document.getElementById('c-list');
-//cList.select2();
+var characterID = localStorage.getItem("characterID");
+console.log(characterID)
 
-  // TODO handle data
-  console.log("DATA", data.data.results);
+var character;
+var comics;
 
-  //for (let i = 0; i < data.data.results.length; i ++) {
-   // const character = data.data.results[i];
-  //  const cBtn = document.createElement('option');
- //   cBtn.classList = ["navbar-item"];
-//    cBtn.textContent = character.name;
-
-    //cBtn.addEventListener('click', function () {
-      //alert(character.description);
-    //});
-
-  //  cList.appendChild(cBtn);
-  });
-  // loop
-  // create oprion
-  // add option
-//});
+async function getContent() {
+  let response = await fetch (
+    `https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${characterNameEl.value}`
+  )
+  if (response.ok) { // if HTTP-status is 200-299
+    // get the response body (the method explained below)
+    let json = await response.json();
+    character = json.data.results[0]
+    let response2 = await fetch (
+      `https://gateway.marvel.com/v1/public/characters/${character.id}/comics?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100`
+    )
+    if (response2.ok) { // if HTTP-status is 200-299
+      // get the response body (the method explained below)
+      let json2 = await response2.json();
+      comics = json2.data.results
+    } else {
+      alert("HTTP-Error: " + response2.status);
+    }
+  } else {
+    alert("HTTP-Error: " + response.status);
+  }
 }
 
-var contentNameEl = document.getElementById("content-dropdown")
+
+var contentNameEl = document.getElementById("content-dropdown");
 
 function storeElements() {
   console.log(characterNameEl.value)
-  var newSearch = {
-   characterChosen: characterNameEl.value,
-    contentChosen: contentNameEl.value
-  }
-  userSearch.push(newSearch);
 
-  localStorage.setItem("storeSearch", JSON.stringify(userSearch));
-  localStorage.getItem("storeSearch")
+  localStorage.setItem("characterID", data.results[0].id);
+
 };
 
 //document.getElementById("character-title").appendChild(characterNameEl.value)
 
-
-
 document.getElementById("search-button").onclick = function () {
-//  storeElements()
+  //storeElements()
   localStorage
   //location.href = "results.html";
   console.log(characterNameEl.value)
   
   characterTitleEl.innerHTML = characterNameEl.options[characterNameEl.selectedIndex].text
 
+  // fetch(
+  //   `https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${characterNameEl.value}`
+  // ).then(function(response) {
+  //   console.log(response)
+  //   return response.json();
+  // })
+  //getComicsAPI()
+  getContent()
 
-getAPI()
-// fetch(
-//   `https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${characterNameEl.vaule}`
-// )
-
-fetch(
-  `https://gateway.marvel.com/v1/public/characters/1009351/comics?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100`
-)
-  console.log(`https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&name=${characterNameEl.value}`)
-};
-
-//searchBtn.addEventListener("click", goToPageCb);
-
-//function goToPageCb(){
-//  window.location.href = "results.html";
-//}
+  // console.log(`https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&name=${characterNameEl.value}`)
+}
