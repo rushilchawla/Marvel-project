@@ -18,44 +18,34 @@
 
 <!-- navbav below -->
 <div class="makingCenter">
-<div class="dropdown is-hoverable">
-    <div class="dropdown-trigger">
-      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-        <span>Characters</span>
-        <span class="icon is-small">
-          <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
-    </div>
-    <div class="select" id="c-list" role="menu">
-
-        <!--<option class="navbar-item">Characters</option>--> 
-        <select id ="c-list">
-          <!-- list added by javascript -->        
-        <option class="navbar-item" id="IronMan">
+    <div class="select"  id="cList" role="menu">
+      <!--<option class="navbar-item">Characters</option>--> 
+      <select id="character-name">
+        <!-- list added by javascript -->        
+        <option class="navbar-item" value="Iron%20Man">                                                
         Iron Man
         </option>
-        <option class="navbar-item" id="Spider-Man">
-        Spider Man
+        <option class="navbar-item" value="Spider-Man">
+        Spider-Man
         </option>
-        <option class="navbar-item" id="Hulk">
+        <option class="navbar-item" value="Hulk">
         Hulk
         </option>
-        <option class="navbar-item" id="BlackWidow">
+        <option class="navbar-item" value="BlackWidow">
         Black Widow
         </option>
-        <option class="navbar-item" id="Thor">
+        <option class="navbar-item" value="Thor">
         Thor
         </option>
-        <option class="navbar-item" id="CaptainAmerica">
+        <option class="navbar-item" value="CaptainAmerica">
         Captain America
         </option>
-        <option class="navbar-item" id="Wolverine">
+        <option class="navbar-item" value="Wolverine">
         Wolverine
         </option>
       </select>
+
     </div>
-</div>
 
   <div class="select" id="content-dropdown" role="menu">
     <select>
@@ -66,7 +56,10 @@
       <option class="navbar-item">Series</option>
       <option class="navbar-item">Stories</option>
     </select>
-  </div>    
+  </div>
+
+</div>    
+
 <div class="navbar-item">
   <div class="buttons">
     <a class="button is-primary" id="search-button">
@@ -79,7 +72,7 @@
         <div class="columns">
             <div class="column has-text-centered">
                 <div class="box">
-                    <p class="title">Title if needed</p>
+                    <p class="title" id="character-title">Title if needed</p>
                 </div>
             </div>
         </div>

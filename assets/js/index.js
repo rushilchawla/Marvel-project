@@ -1,6 +1,9 @@
 //var searchBtn = document.getElementById("search-button")
 var contentDropdownEl = document.getElementById("content-dropdown")
+var characterNameEl = document.getElementById("character-name")
+var characterTitleEl = document.getElementById("character-title")
 
+console.log(characterNameEl.value);
 
 const apiKey = "879eacf85a9c70745a7fb038ce0cca14";
 
@@ -11,18 +14,8 @@ const privateKey = "48df6dafa89bd8c2666981b77990fe8216f6f14c";
 const hash = CryptoJS.MD5(ts + privateKey + apiKey).toString();
 console.log("HASH", hash);
 
-
-var arrayForCharacter = ["Iron Man"]
-
-// //adding event listener to select the characters
-// var navbarEl = document.getElementsByClassName("navbar-item")
-
-// navbarEl.addEventListener("click", function(){})
-
-// const selectEl = document.getElementById("my-select");
-
-fetch(
-  `https://gateway.marvel.com:443/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&name=${arrayForCharacter}`
+function getAPI() { fetch(
+  `https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${characterNameEl.value}`
 ).then(function(response) {
   return response.json();
 })
@@ -49,10 +42,44 @@ const cList = document.getElementById('c-list');
   // create oprion
   // add option
 //});
+}
+
+var contentNameEl = document.getElementById("content-dropdown")
+
+function storeElements() {
+  console.log(characterNameEl.value)
+  var newSearch = {
+   characterChosen: characterNameEl.value,
+    contentChosen: contentNameEl.value
+  }
+  userSearch.push(newSearch);
+
+  localStorage.setItem("storeSearch", JSON.stringify(userSearch));
+  localStorage.getItem("storeSearch")
+};
+
+//document.getElementById("character-title").appendChild(characterNameEl.value)
+
+
 
 document.getElementById("search-button").onclick = function () {
+//  storeElements()
   localStorage
-  location.href = "results.html";
+  //location.href = "results.html";
+  console.log(characterNameEl.value)
+  
+  characterTitleEl.innerHTML = characterNameEl.options[characterNameEl.selectedIndex].text
+
+
+getAPI()
+// fetch(
+//   `https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100&name=${characterNameEl.vaule}`
+// )
+
+fetch(
+  `https://gateway.marvel.com/v1/public/characters/1009351/comics?apikey=${apiKey}&hash=${hash}&ts=${ts}&limit=100`
+)
+  console.log(`https://gateway.marvel.com/v1/public/characters?apikey=${apiKey}&hash=${hash}&ts=${ts}&name=${characterNameEl.value}`)
 };
 
 //searchBtn.addEventListener("click", goToPageCb);
