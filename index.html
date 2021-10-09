@@ -16,69 +16,47 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Marvel-Project</title>
+  </head>
+  <body>
+    <h3 class="title is-3 has-text-centered">Marvel Character Wiki</h3>
+    <!-- @TODO: add logo for Marvel -->
 
-</head>
-<body>
+    <!-- navbav below -->
+    <div class="makingCenter">
+      <div class="select" id="cList" role="menu">
+        <!--<option class="navbar-item">Characters</option>-->
+        <select id="character-name">
+          <!-- list added by javascript -->
+          <option class="navbar-item" value="">Select Character</option>
+          <option class="navbar-item" value="Iron%20Man">Iron Man</option>
+          <option class="navbar-item" value="Scarlet%20Witch">
+            Scarlet Witch
+          </option>
+          <option class="navbar-item" value="Hulk">Hulk</option>
+          <option class="navbar-item" value="Black%20Widow">Black Widow</option>
+          <option class="navbar-item" value="Thor">Thor</option>
+          <option class="navbar-item" value="Captain%20America">
+            Captain America
+          </option>
+          <option class="navbar-item" value="Wolverine">Wolverine</option>
+        </select>
+      </div>
 
-  <h3 class="title is-3 has-text-centered">Marvel Character Wiki</h3>
-  <!-- @TODO: add logo for Marvel -->
-
-<!-- navbav below -->
-<div class="makingCenter">
-    <div class="select"  id="cList" role="menu">
-      <!--<option class="navbar-item">Characters</option>--> 
-      <select id="character-name">
-        <!-- list added by javascript -->  
-        <option class="navbar-item" value="">
-        Select Character
-        </option>
-        <option class="navbar-item" value="Iron%20Man">                                                
-        Iron Man
-        </option>
-        <option class="navbar-item" value="Scarlet%20Witch">
-        Scarlet Witch
-        </option>
-        <option class="navbar-item" value="Hulk">
-        Hulk
-        </option>
-        <option class="navbar-item" value="Black%20Widow">
-        Black Widow
-        </option>
-        <option class="navbar-item" value="Thor">
-        Thor
-        </option>
-        <option class="navbar-item" value="Captain%20America">
-        Captain America
-        </option>
-        <option class="navbar-item" value="Wolverine">
-        Wolverine
-        </option>
-      </select>
-
-      <div class="select" id="content-dropdown" role="menu">
+      <!-- <div class="select" id="content-dropdown" role="menu">
         <select>
           <option class="navbar-item">Content</option>
           <option class="navbar-item">Comics</option>
         </select>
-      </div>
+      </div> -->
     </div>
 
-  <div class="select" id="content-dropdown" role="menu">
-    <select>
-      <option class="navbar-item">Content</option>
-      <option class="navbar-item">Comics</option>
-    </select>
-  </div>
-
-</div>    
-
-<div class="navbar-item">
-  <div class="buttons">
-    <a class="button is-primary" id="search-button">
-      <strong>search</strong>
-    </a>
-  </div>
-</div>
+    <div class="navbar-item">
+      <div class="buttons">
+        <a class="button is-primary" id="search-button">
+          <strong>search</strong>
+        </a>
+      </div>
+    </div>
 
     <div>
       <div class="columns">
@@ -90,10 +68,25 @@
       </div>
       <div>
         <div class="columns">
-            <div class="column has-text-centered">
-                <div class="box">
-                    <p class="title" id="character-title"></p>
-                </div>
+          <div class="column">
+            <div class="box">
+              <ul id="character-image">
+
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <h3 class="title is-4 has-text-centered">Description</h3>
+              <p class="text-info" id="character-desc">
+                info about what site is for and how to use it
+              </p>
+            </div>
+            <div class="box">
+              <h3 class="title is-4 has-text-centered">Comics of Character</h3>
+              <ol id="comic-name">
+
+              </ol>
             </div>
           </div>
         </div>
