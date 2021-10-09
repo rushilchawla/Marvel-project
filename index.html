@@ -1,107 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bulma CSS framework -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
     <!-- select2 CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Marvel-Project</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h3 class="title is-3 has-text-centered">Marvel Character Wiki</h3>
+    <!-- @TODO: add logo for Marvel -->
 
-  <h3 class="title is-3 has-text-centered">Marvel Character Wiki</h3>
-  <!-- @TODO: add logo for Marvel -->
+    <!-- navbav below -->
+    <div class="makingCenter">
+      <div class="select" id="cList" role="menu">
+        <!--<option class="navbar-item">Characters</option>-->
+        <select id="character-name">
+          <!-- list added by javascript -->
+          <option class="navbar-item" value="">Select Character</option>
+          <option class="navbar-item" value="Iron%20Man">Iron Man</option>
+          <option class="navbar-item" value="Scarlet%20Witch">
+            Scarlet Witch
+          </option>
+          <option class="navbar-item" value="Hulk">Hulk</option>
+          <option class="navbar-item" value="Black%20Widow">Black Widow</option>
+          <option class="navbar-item" value="Thor">Thor</option>
+          <option class="navbar-item" value="Captain%20America">
+            Captain America
+          </option>
+          <option class="navbar-item" value="Wolverine">Wolverine</option>
+        </select>
+      </div>
 
-<!-- navbav below -->
-<div class="makingCenter">
-    <div class="select"  id="cList" role="menu">
-      <!--<option class="navbar-item">Characters</option>--> 
-      <select id="character-name">
-        <!-- list added by javascript -->        
-        <option class="navbar-item" value="Iron%20Man">                                                
-        Iron Man
-        </option>
-        <option class="navbar-item" value="Scarlet%20Witch">
-        Scarlet Witch
-        </option>
-        <option class="navbar-item" value="Hulk">
-        Hulk
-        </option>
-        <option class="navbar-item" value="Black%20Widow">
-        Black Widow
-        </option>
-        <option class="navbar-item" value="Thor">
-        Thor
-        </option>
-        <option class="navbar-item" value="Captain%20America">
-        Captain America
-        </option>
-        <option class="navbar-item" value="Wolverine">
-        Wolverine
-        </option>
-      </select>
-
+      <!-- <div class="select" id="content-dropdown" role="menu">
+        <select>
+          <option class="navbar-item">Content</option>
+          <option class="navbar-item">Comics</option>
+        </select>
+      </div> -->
     </div>
 
-  <div class="select" id="content-dropdown" role="menu">
-    <select>
-      <option class="navbar-item">Content</option>
-      <option class="navbar-item">Comics</option>
-    </select>
-  </div>
+    <div class="navbar-item">
+      <div class="buttons">
+        <a class="button is-primary" id="search-button">
+          <strong>search</strong>
+        </a>
+      </div>
+    </div>
 
-</div>    
-
-<div class="navbar-item">
-  <div class="buttons">
-    <a class="button is-primary" id="search-button">
-      <strong>search</strong>
-    </a>
-  </div>
-</div>
-
-    <div>        
+    <div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <div class="box">
+            <p class="title" id="character-title"></p>
+          </div>
+        </div>
+      </div>
+      <div>
         <div class="columns">
-            <div class="column has-text-centered">
-                <div class="box">
-                    <p class="title" id="character-title"></p>
-                </div>
+          <div class="column">
+            <div class="box">
+              <ul id="character-image">
+
+              </ul>
             </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <h3 class="title is-4 has-text-centered">Description</h3>
+              <p class="text-info" id="character-desc">
+                info about what site is for and how to use it
+              </p>
+            </div>
+            <div class="box">
+              <h3 class="title is-4 has-text-centered">Comics of Character</h3>
+              <ol id="comic-name">
+
+              </ol>
+            </div>
+          </div>
         </div>
-        <div>
-            <div class="columns">
-                <div class="column">
-                    <div class="box">
-                        <p class="text-info">info about what site is for and how to use it</p>
-                    </div>
-                </div>
-            </div>           
-        </div>
+      </div>
     </div>
 
     <footer class="footer">
-        <div class="content has-text-centered">
-          <p>
-            <strong>Marvel Character Wiki</strong> by Rushil, Sophie and Aaron.
-            <a href="https://https://github.com/rushilchawla/Marvel-project">GitHub site</a>.
-          </p>
-        </div>
+      <div class="content has-text-centered">
+        <p>
+          <strong>Marvel Character Wiki</strong> by Rushil, Sophie and Aaron.
+          <a href="https://https://github.com/rushilchawla/Marvel-project"
+            >GitHub site</a
+          >.
+        </p>
+      </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <!-- select2 Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-      $( document ).ready(function() {
+      $(document).ready(function () {
         // loading select2 for character list within javascript
-        $( "#c-list" ).select2();
-      });  
-    </script>   
-    <script src="./assets/js/index.js"></script>    
-</body>
+        $("#c-list").select2();
+      });
+    </script>
+    <script src="./assets/js/index.js"></script>
+  </body>
 </html>
