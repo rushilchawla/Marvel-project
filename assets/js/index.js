@@ -100,8 +100,7 @@ function init() {
   if (savedCharacter !== []) {
     localStorage.setItem("characterName", savedCharacter);
     characterNameEl.value = localStorage.getItem("characterName");
-    characterTitleEl.innerHTML =
-      characterNameEl.options[characterNameEl.selectedIndex].text;
+    //characterTitleEl.innerHTML = characterNameEl.options[characterNameEl.selectedIndex].text;
 
     getContent(savedCharacter);
     console.log(savedCharacter);
