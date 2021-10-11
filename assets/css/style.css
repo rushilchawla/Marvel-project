@@ -183,8 +183,17 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 40%, orange);
     background: orange;
 }
 
+.makingCenter {
+    display:flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.select {
+    padding: 5px;
+}
+
 .box {
-    
     border:2px solid #fff;
     box-shadow: 10px 10px 5px #ccc;
     -moz-box-shadow: 10px 10px 5px #ccc;

@@ -4,6 +4,7 @@ var characterNameEl = document.getElementById("character-name");
 var characterTitleEl = document.getElementById("character-title");
 var characterDescEl = document.getElementById("character-desc");
 
+
 console.log(characterNameEl.value);
 
 const apiKey = "879eacf85a9c70745a7fb038ce0cca14";
@@ -63,8 +64,14 @@ async function getContent(characterName) {
  $(comicNameEl).empty()
 
       for (let i = 0; i < 4; i++) {
-         comicName = json2.data.results[i].series.name;
-      comicNameEl.append(comicName);
+        comicName = json2.data.results[i].series.name;
+        
+        const liComicNameEl = document.createElement("li");
+
+        
+        comicNameEl.append(liComicNameEl);
+      liComicNameEl.append(comicName);
+
         }
      
 
