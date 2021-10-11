@@ -186,7 +186,6 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 40%, orange);
 .makingCenter {
     display:flex;
     justify-content: center;
-    padding-top: 50px;
 }
 
 .select {
