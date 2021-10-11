@@ -60,7 +60,7 @@ async function getContent(characterName) {
       let json2 = await response2.json();
       comics = json2.data.results;
       // add comic names
- $(comicNameEl).empty()
+      $(comicNameEl).empty()
 
       for (let i = 0; i < 4; i++) {
          comicName = json2.data.results[i].series.name;
