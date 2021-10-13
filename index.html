@@ -22,84 +22,84 @@
 
   <body>
     <!-- header -->
-    <div class="marvel-logo title is-3 has-text-centered">
-      <img src="./assets/images/Marvel_Logo.jpg" alt="Marvel Logo">
+    <div class="marvel-logo is-3 has-text-centered">
+      <img src="./assets/images/Marvel_Character_Wiki.jpg" alt="Marvel Logo">
     </div>
-    <h3 class="title is-3 has-text-centered">Marvel Character Wiki</h3>
+    <!-- <h3 class="title is-3 has-text-centered">Marvel Character Wiki</h3> -->
 
     <!-- navbav images below -->
     <navbar class="top-images">
       <div class="marvel-image">
         <div class="imgBx">
-          <img src="./assets/images/img1.jpg" alt="ironman">
+          <img src="./assets/images/img1.jpg" alt="ironman" value="Iron%20Man">
         </div>
         <div class="content">
           <h3>Ironman</h3>
         </div>
-    </div>
-    
-    <div class="marvel-image">
+      </div>
+      
+      <div class="marvel-image">
         <div class="imgBx">
           <img src="./assets/images/img2.jpg" alt="Scarlet Witch">
         </div>
         <div class="content">
           <h3>Scarlet Witch</h3>
         </div>
-    </div>
+      </div>
 
-    <div class="marvel-image">
+      <div class="marvel-image">
         <div class="imgBx">
           <img src="./assets/images/img3.jpg" alt="Thor">
         </div>
         <div class="content">
           <h3>Thor</h3>
         </div>
-    </div>
+      </div>
 
-    <div class="marvel-image">
+      <div class="marvel-image">
         <div class="imgBx">
           <img src="./assets/images/img6.jpg" alt="Black Widow">
         </div>
         <div class="content">
           <h3>Black Widow</h3>
         </div>
-    </div>
-  
-    <div class="marvel-image">
+      </div>
+    
+      <div class="marvel-image">
         <div class="imgBx">
           <img src="./assets/images/img4.jpg" alt="Hulk">
         </div>
         <div class="content">
           <h3>Hulk</h3>
         </div>
-    </div>
+      </div>
 
-    <div class="marvel-image">
+      <div class="marvel-image">
         <div class="imgBx">
           <img src="./assets/images/img5.jpg" alt="Wonder Woman">
         </div>
         <div class="content">
           <h3>Wonder Woman</h3>
         </div>
-    </div>
+      </div>
 
-    <div class="marvel-image">
-      <div class="imgBx">
-        <img src="./assets/images/img7.jpg" alt="spider-man">
+      <div class="marvel-image">
+        <div class="imgBx">
+          <img src="./assets/images/img7.jpg" alt="spider-man">
+        </div>
+        <div class="content">
+          <h3>Spider-Man</h3>
+        </div>
       </div>
-      <div class="content">
-        <h3>Spider-Man</h3>
-      </div>
-    </div>
 
-    <div class="marvel-image">
-      <div class="imgBx">
-        <img src="./assets/images/img8.jpg" alt="Wolverine">
+      <div class="marvel-image">
+        <div class="imgBx">
+          <img src="./assets/images/img8.jpg" alt="Wolverine">
+        </div>
+        <div class="content">
+          <h3>Wolverine</h3>
+        </div>
       </div>
-      <div class="content">
-        <h3>Wolverine</h3>
-      </div>
-  </div>
     </navbar>
     <!--navbar images ended-->
 
@@ -128,38 +128,47 @@
   </div>
       <div>
         <div class="columns">
-          <div class="column has-text-centered">
-            <div class="box">
-              <p class="title" id="character-title"></p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="columns">
-            <!-- Column for character image -->
-            <div class="column">
-              <div class="box has-text-centered">
-                <ul id="character-image">
-                  Image of character
-                </ul>
+          <div>
+            <div class="columns">
+              <!-- Column for character image -->
+              <div class="column">
+                <div class="box has-text-centered">
+                  <ul id="character-image">
+                    Image of character
+                  </ul>
+                </div>
+              </div>
+              <div class="column is-two-thirds">
+                <div class="column has-text-centered">
+                  <div class="box">
+                    <p class="title" id="character-title"></p>
+                  </div>
+                </div>
+                <!-- row for character description -->
+                <div class="box">
+                  <h3 class="title is-4 has-text-centered">Description</h3>
+                  <p class="text-info" id="character-desc">
+                    Please choose a character and click search.
+                  </p>
+                  <br>
+                  <span class="text-info" id="character-desc-website">
+                    <!-- informatino added by javascript -->
+                  </span>
+                </div>
               </div>
             </div>
-            <div class="column">
-              <!-- row for character description -->
-              <div class="box">
-                <h3 class="title is-4 has-text-centered">Description</h3>
-                <p class="text-info" id="character-desc">
-                  Please choose a character and click search.
-                </p>
-              </div>
-              <!-- row for characters comics -->
-              <div class="box">
-                <h3 class="title is-4 has-text-centered">Comics of Character</h3>
-                <ol id="comic-name">
-                  <!-- comic list added by API -->
-                </ol>
-              </div>
-            </div>
+            <!-- row for characters comics -->
+            <div class="box has-text-centered">
+              <!-- <h3 class="title is-4 has-text-centered">Comics of Character</h3> -->
+              <ol id="comic-name">
+                <!-- comic list added by API -->
+                list of comics
+              </ol>
+              <ol id="comic-image">
+                <!-- comic images added by API -->
+                Image of character
+              </ol>
+            </div>           
           </div>
         </div>
       </div>

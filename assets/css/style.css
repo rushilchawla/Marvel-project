@@ -27,7 +27,7 @@
     align-items: top;
     flex-wrap: wrap;
     
-    background: black;
+    background: #202020;
 }
 
 .marvel-image{
@@ -91,6 +91,13 @@
     padding: 9px;
     text-align: center;
     font-size: 15px;
+}
+
+.marvel-logo {
+    padding: 10px;
+    margin: 0px;
+    background: #202020;
+    border-bottom: 1px solid #393939;
 }
 
 .marvel-image:nth-child(1):before,
@@ -198,4 +205,19 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 40%, orange);
     -moz-box-shadow: 10px 10px 5px #ccc;
     -webkit-box-shadow: 10px 10px 5px #ccc;
     -khtml-box-shadow: 10px 10px 5px #ccc;
-  }
+}
+
+#character-desc-website {
+    font: 800 14px/1 Roboto Bold,Trebuchet MS,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #e62429;
+    transition: none;
+    text-align: center;
+    padding: 10px 35px;
+    cursor: pointer;
+}
+
+#character-desc-website:hover {
+    background-color: #cc2026;
+}
