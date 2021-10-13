@@ -1,3 +1,9 @@
+#header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 .dropdown-item{
     max-height:200px;/* you can change as you need it */
     overflow:auto;/* to get scroll */
@@ -220,4 +226,18 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 40%, orange);
 
 #character-desc-website:hover {
     background-color: #cc2026;
+}
+
+.left-margin {
+    margin-left: 10px;
+}
+
+.right-margin {
+    margin-right: 10px;
+}
+
+.footer {
+    color: #fff;
+    background: #202020;
+    border-top: 1px solid #393939;
 }

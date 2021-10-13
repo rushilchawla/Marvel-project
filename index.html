@@ -22,7 +22,7 @@
 
   <body>
     <!-- header -->
-    <div class="marvel-logo is-3 has-text-centered">
+    <div class="marvel-logo is-3 has-text-centered" id="header">
       <img src="./assets/images/Marvel_Character_Wiki.jpg" alt="Marvel Logo">
     </div>
     <!-- <h3 class="title is-3 has-text-centered">Marvel Character Wiki</h3> -->
@@ -131,35 +131,34 @@
           <div>
             <div class="columns">
               <!-- Column for character image -->
-              <div class="column">
+              <div class="column left-margin">
                 <div class="box has-text-centered">
                   <ul id="character-image">
                     Image of character
                   </ul>
                 </div>
               </div>
-              <div class="column is-two-thirds">
+              <div class="column is-two-thirds right-margin">
                 <div class="column has-text-centered">
                   <div class="box">
                     <p class="title" id="character-title"></p>
                   </div>
+                  <div class="box">
+                    <h3 class="title is-4 has-text-centered">Description</h3>
+                    <p class="text-info" id="character-desc">
+                      Please choose a character and click search.
+                    </p>
+                    <br>
+                    <span class="text-info" id="character-desc-website">
+                      <!-- informatino added by javascript -->
+                    </span>
+                  </div>
                 </div>
                 <!-- row for character description -->
-                <div class="box">
-                  <h3 class="title is-4 has-text-centered">Description</h3>
-                  <p class="text-info" id="character-desc">
-                    Please choose a character and click search.
-                  </p>
-                  <br>
-                  <span class="text-info" id="character-desc-website">
-                    <!-- informatino added by javascript -->
-                  </span>
-                </div>
               </div>
             </div>
             <!-- row for characters comics -->
-            <div class="box has-text-centered">
-              <!-- <h3 class="title is-4 has-text-centered">Comics of Character</h3> -->
+            <div class="column has-text-centered">
               <ol id="comic-name">
                 <!-- comic list added by API -->
                 list of comics
@@ -168,7 +167,7 @@
                 <!-- comic images added by API -->
                 Image of character
               </ol>
-            </div>           
+            </div>          
           </div>
         </div>
       </div>
@@ -176,7 +175,7 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong>Marvel Character Wiki</strong> by Rushil, Sophie and Aaron.
+          Marvel Character Wiki by Rushil, Sophie and Aaron.
           <a href="https://https://github.com/rushilchawla/Marvel-project"
             >GitHub site</a
           >.
